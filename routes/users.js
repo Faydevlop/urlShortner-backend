@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const usercontroller = require("../controller/AuthController")
-// import authenticateToken from '../middleware/JWTverify';
+const jwtauth = require("../middleware/JWTverify")
 
 
 
@@ -9,12 +9,12 @@ const usercontroller = require("../controller/AuthController")
 router.post('/signup',usercontroller.usersignup);
 // user login
 router.post('/login',usercontroller.userLogin)
-
-router.post('/shortURL',usercontroller.shortURL)
-
+// accept urls
+router.post('/shortURL',jwtauth,jwtauth,usercontroller.shortURL)
+// convert shorturls to normal
 router.get('/:shortCode',usercontroller.redirectShortURL)
-
-router.get('/getURLs/:userId',usercontroller.getURLs)
+// getting user specific urls
+router.get('/getURLs/:userId',jwtauth,usercontroller.getURLs)
 
 
 
