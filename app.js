@@ -15,19 +15,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch((err) => console.log('MongoDB connection error:', err));
 
 
-app.use(
-    cors({
-      origin: (origin, callback) => {
-        const allowedOrigins = ['http://localhost:3001', process.env.FRONT_END_URL];
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error('Not allowed by CORS'));
-        }
-      },
-      credentials: true, // Allow cookies and other credentials
-    })
-  );
+app.use(cors());
   
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,6 +25,10 @@ app.use(cookieParser());
 
 
 app.use('/', usersRouter);
+
+app.get('/',(req,res)=>{
+  res.send('server is on')
+})
 
 module.exports = app;
 
