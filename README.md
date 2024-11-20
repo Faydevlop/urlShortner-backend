@@ -115,3 +115,13 @@ Created with ❤️ by [Fayis Nambiyath](https://github.com/Faydevlop)
 4. **Installation Steps**: Clear instructions on how to set up and run the project locally.
 5. **Environment Variables**: Essential for managing sensitive data like database URLs and JWT secrets.
 
+## AI Models Used
+
+This project leverages AI models from **OpenAI** and **V0.dev** for reference and model building:
+
+- **OpenAI**: Utilized OpenAI’s models for generating intelligent insights, processing natural language input, and integrating AI-driven features.
+- **V0.dev**: Incorporated V0.dev’s AI models to enhance functionality and accelerate development of the URL shortener, focusing on scalability and performance.
+
+Thank you to **OpenAI** and **V0.dev** for their powerful tools and resources.
+
+
